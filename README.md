@@ -19,88 +19,88 @@
 
 ```mermaid
 erDiagram
-    Catalog_Clients {
-        String Code PK
-        String Description
-        String Phone
-        String Email
+    Справочник_Клиенты {
+        Строка Код PK
+        Строка Наименование
+        Строка Телефон
+        Строка ЭлектроннаяПочта
     }
-    Catalog_Employees {
-        String Code PK
-        String Description
-        String Position
+    Справочник_Сотрудники {
+        Строка Код PK
+        Строка Наименование
+        Строка Должность
     }
-    Catalog_Warehouses {
-        String Code PK
-        String Description
+    Справочник_Склады {
+        Строка Код PK
+        Строка Наименование
     }
-    Catalog_Nomenclature {
-        String Code PK
-        String Description
-        Enum_Type NomType
-        Number Price
+    Справочник_Номенклатура {
+        Строка Код PK
+        Строка Наименование
+        Перечисление_ТипыНоменклатуры ТипНоменклатуры
+        Число РозничнаяЦена
     }
-    Document_ClientRequest {
-        String Number PK
-        Date Date
-        Catalog_Clients Client
-        String Description
-        Enum_Status CurrentStatus
+    Документ_ЗаявкаКлиента {
+        Строка Номер PK
+        Дата Дата
+        Справочник_Клиенты Клиент
+        Строка ОписаниеНеисправности
+        Перечисление_СостоянияЗаявок ТекущийСтатус
     }
-    Document_MaterialReceipt {
-        String Number PK
-        Date Date
-        Catalog_Providers Provider
-        Catalog_Warehouses Warehouse
-        Table_Materials Materials
+    Документ_ПоступлениеМатериалов {
+        Строка Номер PK
+        Дата Дата
+        Справочник_Поставщики Поставщик
+        Справочник_Склады Склад
+        ТабличнаяЧасть_Материалы СоставМатериалов
     }
-    Document_WorkPerformance {
-        String Number PK
-        Date Date
-        Document_ClientRequest DocumentBasis
-        Catalog_Warehouses Warehouse
-        Catalog_Employees Master
-        Table_WorksAndMaterials Items
+    Документ_ВыполнениеРабот {
+        Строка Номер PK
+        Дата Дата
+        Документ_ЗаявкаКлиента ДокументОснование
+        Справочник_Склады Склад
+        Справочник_Сотрудники Мастер
+        ТабличнаяЧасть_МатериалыИРаботы СоставРабот
     }
-    Document_ClosingRequest {
-        String Number PK
-        Date Date
-        Document_ClientRequest ClientRequest
-        Enum_Status FinalStatus
+    Документ_ЗакрытиеЗаявки {
+        Строка Номер PK
+        Дата Дата
+        Документ_ЗаявкаКлиента ЗаявкаКлиента
+        Перечисление_СостоянияЗаявок КонечныйСтатус
     }
-    RegisterInfo_OrderStates {
-        Date Period PK
-        Document_ClientRequest ClientRequest FK
-        Enum_Status Status
+    РегистрСведений_СостоянияЗаявок {
+        Дата Период PK
+        Документ_ЗаявкаКлиента ЗаявкаКлиента FK
+        Перечисление_СостоянияЗаявок Статус
     }
-    RegisterAccum_MaterialBalances {
-        Catalog_Warehouses Warehouse FK
-        Catalog_Nomenclature Material FK
-        Number Quantity
+    РегистрНакопления_ОстаткиМатериалов {
+        Справочник_Склады Склад FK
+        Справочник_Номенклатура Материал FK
+        Число Количество
     }
-    RegisterAccum_CompletedWorks {
-        Catalog_Employees Master FK
-        Catalog_Nomenclature Service FK
-        Number Quantity
-        Number Sum
+    РегистрНакопления_ВыполненныеРаботы {
+        Справочник_Сотрудники Мастер FK
+        Справочник_Номенклатура РаботаИлиМатериал FK
+        Число Количество
+        Число Сумма
     }
 
-    Catalog_Clients ||--o{ Document_ClientRequest : "размещает"
-    Catalog_Employees ||--o{ Document_WorkPerformance : "выполняет"
-    Catalog_Warehouses ||--o{ Document_MaterialReceipt : "хранит"
-    Catalog_Warehouses ||--o{ Document_WorkPerformance : "расходует"
+    Справочник_Клиенты ||--o{ Документ_ЗаявкаКлиента : "размещает"
+    Справочник_Сотрудники ||--o{ Документ_ВыполнениеРабот : "выполняет"
+    Справочник_Склады ||--o{ Документ_ПоступлениеМатериалов : "хранит"
+    Справочник_Склады ||--o{ Документ_ВыполнениеРабот : "расходует"
     
-    Document_ClientRequest ||--o{ Document_WorkPerformance : "основание для"
-    Document_ClientRequest ||--|| Document_ClosingRequest : "закрывается"
+    Документ_ЗаявкаКлиента ||--o{ Документ_ВыполнениеРабот : "основание для"
+    Документ_ЗаявкаКлиента ||--|| Документ_ЗакрытиеЗаявки : "закрывается"
     
-    Document_ClientRequest ||--o{ RegisterInfo_OrderStates : "история статусов"
+    Документ_ЗаявкаКлиента ||--o{ РегистрСведений_СостоянияЗаявок : "история статусов"
     
-    Document_MaterialReceipt ||--o{ RegisterAccum_MaterialBalances : "приходует"
-    Document_WorkPerformance ||--o{ RegisterAccum_MaterialBalances : "расходует"
-    Document_WorkPerformance ||--o{ RegisterAccum_CompletedWorks : "начисляет выработку"
+    Документ_ПоступлениеМатериалов ||--o{ РегистрНакопления_ОстаткиМатериалов : "приходует"
+    Документ_ВыполнениеРабот ||--o{ РегистрНакопления_ОстаткиМатериалов : "расходует"
+    Документ_ВыполнениеРабот ||--o{ РегистрНакопления_ВыполненныеРаботы : "начисляет выработку"
     
-    Catalog_Nomenclature ||--o{ RegisterAccum_MaterialBalances : "учитывается"
-    Catalog_Nomenclature ||--o{ RegisterAccum_CompletedWorks : "выполняется/продается"
+    Справочник_Номенклатура ||--o{ РегистрНакопления_ОстаткиМатериалов : "учитывается"
+    Справочник_Номенклатура ||--o{ РегистрНакопления_ВыполненныеРаботы : "выполняется/продается"
 ```
 
 ---
@@ -267,6 +267,7 @@ erDiagram
 
 *   📱 **Telegram:** [@N_Dmitry_1C](https://t.me/N_Dmitry_1C)
 *   📧 **E-mail:** `n.dmitry-1cdev@mail.ru`
+*   💻 **GitHub:** [TheYxel](https://github.com/TheYxel)
 
 ---
 *Готов к сотрудничеству, прохождению стажировок и участию в масштабных проектах по внедрению систем на платформе 1С!*
