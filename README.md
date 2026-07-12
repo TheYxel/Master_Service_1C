@@ -13,6 +13,98 @@
 
 ---
 
+## 📊 Архитектурная модель данных (ERD Diagram)
+
+Для демонстрации архитектуры базы данных решения разработана детальная Entity-Relationship-диаграмма (ERD), описывающая связи между справочниками, документами, периодическими регистрами сведений и регистрами накопления:
+
+```mermaid
+erDiagram
+    Catalog_Clients {
+        String Code PK
+        String Description
+        String Phone
+        String Email
+    }
+    Catalog_Employees {
+        String Code PK
+        String Description
+        String Position
+    }
+    Catalog_Warehouses {
+        String Code PK
+        String Description
+    }
+    Catalog_Nomenclature {
+        String Code PK
+        String Description
+        Enum_Type NomType
+        Number Price
+    }
+    Document_ClientRequest {
+        String Number PK
+        Date Date
+        Catalog_Clients Client
+        String Description
+        Enum_Status CurrentStatus
+    }
+    Document_MaterialReceipt {
+        String Number PK
+        Date Date
+        Catalog_Providers Provider
+        Catalog_Warehouses Warehouse
+        Table_Materials Materials
+    }
+    Document_WorkPerformance {
+        String Number PK
+        Date Date
+        Document_ClientRequest DocumentBasis
+        Catalog_Warehouses Warehouse
+        Catalog_Employees Master
+        Table_WorksAndMaterials Items
+    }
+    Document_ClosingRequest {
+        String Number PK
+        Date Date
+        Document_ClientRequest ClientRequest
+        Enum_Status FinalStatus
+    }
+    RegisterInfo_OrderStates {
+        Date Period PK
+        Document_ClientRequest ClientRequest FK
+        Enum_Status Status
+    }
+    RegisterAccum_MaterialBalances {
+        Catalog_Warehouses Warehouse FK
+        Catalog_Nomenclature Material FK
+        Number Quantity
+    }
+    RegisterAccum_CompletedWorks {
+        Catalog_Employees Master FK
+        Catalog_Nomenclature Service FK
+        Number Quantity
+        Number Sum
+    }
+
+    Catalog_Clients ||--o{ Document_ClientRequest : "размещает"
+    Catalog_Employees ||--o{ Document_WorkPerformance : "выполняет"
+    Catalog_Warehouses ||--o{ Document_MaterialReceipt : "хранит"
+    Catalog_Warehouses ||--o{ Document_WorkPerformance : "расходует"
+    
+    Document_ClientRequest ||--o{ Document_WorkPerformance : "основание для"
+    Document_ClientRequest ||--|| Document_ClosingRequest : "закрывается"
+    
+    Document_ClientRequest ||--o{ RegisterInfo_OrderStates : "история статусов"
+    
+    Document_MaterialReceipt ||--o{ RegisterAccum_MaterialBalances : "приходует"
+    Document_WorkPerformance ||--o{ RegisterAccum_MaterialBalances : "расходует"
+    Document_WorkPerformance ||--o{ RegisterAccum_CompletedWorks : "начисляет выработку"
+    
+    Catalog_Nomenclature ||--o{ RegisterAccum_MaterialBalances : "учитывается"
+    Catalog_Nomenclature ||--o{ RegisterAccum_CompletedWorks : "выполняется/продается"
+```
+
+---
+
 ## 🏗️ Архитектура решения и бизнес-логика
 
 Конфигурация разработана по стандартам фирмы «1С» и реализует полноценную сервисную модель учета:
@@ -168,7 +260,7 @@
 
 ---
 
-## 👨‍💻 Обо мне
+## 👨‍💻 Об авторе
 
 **Дмитрий Непомнящих**  
 Начинающий разработчик на платформе «1С:Предприятие 8.3». Специализируюсь на проектировании систем автоматизации услуг, управлении складскими запасами, разработке бизнес-цепочек ввода на основании, проектировании сложных отчетов СКД и оптимизации транзакционного проведения.
