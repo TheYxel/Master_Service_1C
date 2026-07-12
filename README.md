@@ -267,7 +267,6 @@ erDiagram
 
 *   📱 **Telegram:** [@N_Dmitry_1C](https://t.me/N_Dmitry_1C)
 *   📧 **E-mail:** `n.dmitry-1cdev@mail.ru`
-*   💻 **GitHub:** [TheYxel](https://github.com/TheYxel)
 
 ---
 *Готов к сотрудничеству, прохождению стажировок и участию в масштабных проектах по внедрению систем на платформе 1С!*
