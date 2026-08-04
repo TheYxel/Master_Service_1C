@@ -309,11 +309,11 @@
 					</Attribute>
 					<Attribute uuid="42043458-a189-4884-ba23-7a90cd1e7bf4">
 						<Properties>
-							<Name>Цена</Name>
+							<Name>ЦенаПокупки</Name>
 							<Synonym>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Цена</v8:content>
+									<v8:content>Цена покупки</v8:content>
 								</v8:item>
 							</Synonym>
 							<Comment/>
