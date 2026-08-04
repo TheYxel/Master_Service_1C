@@ -45,7 +45,6 @@
 		</InputField>
 		<InputField name="СтатусЗаявки" id="16">
 			<DataPath>Объект.СтатусЗаявки</DataPath>
-			<Visible>false</Visible>
 			<EditMode>EnterOnInput</EditMode>
 			<ListChoiceMode>true</ListChoiceMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
