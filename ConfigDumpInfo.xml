@@ -78,7 +78,7 @@
 		<Metadata name="Configuration.Сервис.ClientApplicationInterface" id="18a84fa2-cef2-471d-9566-75d5c15d5c10.b" configVersion="eb6c1db50bdd6a4a9f41201ca4b638a200000000"/>
 		<Metadata name="Configuration.Сервис.CommandInterface" id="18a84fa2-cef2-471d-9566-75d5c15d5c10.a" configVersion="1f4673bd16955442a0ec0fff0153c18100000000"/>
 		<Metadata name="Configuration.Сервис.HomePageWorkArea" id="18a84fa2-cef2-471d-9566-75d5c15d5c10.8" configVersion="64998af5021c494eba6ed7e4363c95ab00000000"/>
-		<Metadata name="Document.ВыполнениеРабот" id="52c6969a-b287-4a3a-84fa-0e51c3ab5b07" configVersion="13a4e0395d76c946b0a0653169b4955d00000000">
+		<Metadata name="Document.ВыполнениеРабот" id="52c6969a-b287-4a3a-84fa-0e51c3ab5b07" configVersion="fbc62b930dd94149a01d2bca158268bf00000000">
 			<Metadata name="Document.ВыполнениеРабот.Attribute.Заказчик" id="0164bd67-bf12-475d-9599-351c4adad771"/>
 			<Metadata name="Document.ВыполнениеРабот.Attribute.Исполнитель" id="1a8ff722-03e7-451b-9cc0-9adb4dfb3113"/>
 			<Metadata name="Document.ВыполнениеРабот.Attribute.Склад" id="4d8c97e7-503c-4ed8-be86-576182e772ca"/>
@@ -98,7 +98,7 @@
 		<Metadata name="Document.ВыполнениеРабот.Form.ФормаСписка" id="bf8cd93d-7c80-4c9f-8882-38a80bfc4bdc" configVersion="367ca18c9464bd489ee6277d69771ed500000000"/>
 		<Metadata name="Document.ВыполнениеРабот.Form.ФормаСписка.Form" id="bf8cd93d-7c80-4c9f-8882-38a80bfc4bdc.0" configVersion="ea48a418cd011641892c95eb4c2cbf5000000000"/>
 		<Metadata name="Document.ВыполнениеРабот.ManagerModule" id="52c6969a-b287-4a3a-84fa-0e51c3ab5b07.2" configVersion="5491011979b3f8469398cb7c8465941400000000"/>
-		<Metadata name="Document.ВыполнениеРабот.ObjectModule" id="52c6969a-b287-4a3a-84fa-0e51c3ab5b07.0" configVersion="671bcb27e7c59942a77ce9ca88480e3b00000000"/>
+		<Metadata name="Document.ВыполнениеРабот.ObjectModule" id="52c6969a-b287-4a3a-84fa-0e51c3ab5b07.0" configVersion="e79e56450ce1914298e2842423d926c900000000"/>
 		<Metadata name="Document.ВыполнениеРабот.Template.Печать" id="003130e7-1c7a-4e91-9a08-c85632993c4b" configVersion="1c6906e4aaa3b3499cf63138984d6c1e00000000"/>
 		<Metadata name="Document.ВыполнениеРабот.Template.Печать.Template" id="003130e7-1c7a-4e91-9a08-c85632993c4b.0" configVersion="5c00b29d13008b4aab620bb7adb7d77800000000"/>
 		<Metadata name="Document.ЗакрытиеЗаявки" id="aac5f509-9d28-455c-9f73-3826af10fc39" configVersion="c585090f3b2da643b818259dcd12a42800000000">
