@@ -259,6 +259,8 @@
 			<CommonPicture>Документы</CommonPicture>
 			<CommonPicture>Регистры</CommonPicture>
 			<CommonPicture>Отчеты</CommonPicture>
+			<Role>Администратор</Role>
+			<Role>Менеджер</Role>
 			<CommonModule>ОбщиеМодулиНаКлиенте</CommonModule>
 			<Catalog>Клиенты</Catalog>
 			<Catalog>Сотрудники</Catalog>
