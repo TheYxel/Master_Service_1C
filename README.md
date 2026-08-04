@@ -4,6 +4,9 @@
 [![Application](https://img.shields.io/badge/Приложение-Управляемые%20формы-blue?style=for-the-badge)](https://v8.1c.ru/platforma/upravlyaemoe-prilozhenie/)
 [![Project](https://img.shields.io/badge/Тип-Учебный%20проект-green?style=for-the-badge)](https://github.com/TheYxel/Master_Service_1C)
 
+## Видеопрезентация
+https://drive.google.com/file/d/1lPOuyzUl_s6b1OZVnkrxfS4wVBQuwxb0
+
 ## 📋 О проекте
 
 **Master_Service_1C** — учебная конфигурация на платформе **«1С:Предприятие 8.3»** для учёта заявок сервисного центра, материалов и выполненных работ.
@@ -126,6 +129,14 @@ erDiagram
     <td align="center"><b>Остатки материалов</b><br><br><a href="Img/Report2.png"><img src="Img/Report2.png" width="320" alt="Отчёт остатков материалов"/></a></td>
   </tr>
 </table>
+
+---
+
+## 🎥 Видеопрезентация проекта
+
+Вы можете ознакомиться с демонстрацией работы конфигурации и разбором бизнес-логики в видеопрезентации:
+
+👉 **[Смотреть видеопрезентацию на Google Диске](https://drive.google.com/file/d/1lPOuyzUl_s6b1OZVnkrxfS4wVBQuwxb0/view?usp=sharing)**
 
 ---
 
