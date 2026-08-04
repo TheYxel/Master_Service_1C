@@ -73,13 +73,13 @@
 			</SearchControlAddition>
 			<ChildItems>
 				<LabelField name="Дата" id="16">
-					<DataPath>Список.Date</DataPath>
+					<DataPath>Список.Дата</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="18"/>
 				</LabelField>
 				<LabelField name="Номер" id="19">
-					<DataPath>Список.Number</DataPath>
+					<DataPath>Список.Номер</DataPath>
 					<ContextMenu name="НомерКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="21"/>
 				</LabelField>
@@ -87,6 +87,17 @@
 					<DataPath>Список.Заявка</DataPath>
 					<ContextMenu name="ЗаявкаКонтекстноеМеню" id="23"/>
 					<ExtendedTooltip name="ЗаявкаРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="СтатусЗаявки" id="34">
+					<DataPath>Список.СтатусЗаявкиРегистр</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус заявки</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СтатусЗаявкиКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="СтатусЗаявкиРасширеннаяПодсказка" id="36"/>
 				</LabelField>
 				<LabelField name="Клиент" id="25">
 					<DataPath>Список.Клиент</DataPath>
@@ -113,8 +124,97 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>false</ManualQuery>
+				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументЗакрытиеЗаявки.Ссылка КАК Ссылка,
+	ДокументЗакрытиеЗаявки.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументЗакрытиеЗаявки.Номер КАК Номер,
+	ДокументЗакрытиеЗаявки.Дата КАК Дата,
+	ДокументЗакрытиеЗаявки.Проведен КАК Проведен,
+	ДокументЗакрытиеЗаявки.Заявка КАК Заявка,
+	ДокументЗакрытиеЗаявки.Клиент КАК Клиент,
+	ДокументЗакрытиеЗаявки.Исполнитель КАК Исполнитель,
+	ДокументЗакрытиеЗаявки.СтатусЗаявки КАК СтатусЗаявки,
+	ДокументЗакрытиеЗаявки.Комментарий КАК Комментарий,
+	ДокументЗакрытиеЗаявки.МоментВремени КАК МоментВремени,
+	СостоянияЗаявокСрезПоследних.СтатусЗаявки КАК СтатусЗаявкиРегистр
+ИЗ
+	Документ.ЗакрытиеЗаявки КАК ДокументЗакрытиеЗаявки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаявок.СрезПоследних КАК СостоянияЗаявокСрезПоследних
+		ПО ДокументЗакрытиеЗаявки.Заявка = СостоянияЗаявокСрезПоследних.Заявка
+</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Проведен</dcssch:dataPath>
+					<dcssch:field>Проведен</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Заявка</dcssch:dataPath>
+					<dcssch:field>Заявка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Клиент</dcssch:dataPath>
+					<dcssch:field>Клиент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Исполнитель</dcssch:dataPath>
+					<dcssch:field>Исполнитель</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтатусЗаявки</dcssch:dataPath>
+					<dcssch:field>СтатусЗаявки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МоментВремени</dcssch:dataPath>
+					<dcssch:field>МоментВремени</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтатусЗаявкиРегистр</dcssch:dataPath>
+					<dcssch:field>СтатусЗаявкиРегистр</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус заявки регистр</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Parameter>
+					<dcssch:name>Период</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
 				<MainTable>Document.ЗакрытиеЗаявки</MainTable>
 				<ListSettings>
 					<dcsset:filter>
