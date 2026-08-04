@@ -113,7 +113,7 @@
 		<Metadata name="Document.ЗакрытиеЗаявки.Form.ФормаСписка" id="212bc82c-57ce-4e37-9387-f622e660bec3" configVersion="fc53173064df6741a6825c8a534c307e00000000"/>
 		<Metadata name="Document.ЗакрытиеЗаявки.Form.ФормаСписка.Form" id="212bc82c-57ce-4e37-9387-f622e660bec3.0" configVersion="50f600c65bef6243891cd26977b97aa600000000"/>
 		<Metadata name="Document.ЗакрытиеЗаявки.ObjectModule" id="aac5f509-9d28-455c-9f73-3826af10fc39.0" configVersion="5907e2d073a4c6488470dd4e6b84d38b00000000"/>
-		<Metadata name="Document.ЗаявкаКлиента" id="415066d3-76f4-435e-b898-d29c66db1265" configVersion="4bb6084d90e3d849873d938f522dbf5800000000">
+		<Metadata name="Document.ЗаявкаКлиента" id="415066d3-76f4-435e-b898-d29c66db1265" configVersion="814fa5a3ff622a4b980645b37f91690e00000000">
 			<Metadata name="Document.ЗаявкаКлиента.Attribute.ПлановаяДатаВыполнения" id="1abe8939-3233-49bf-be2f-7c8fb109cc60"/>
 			<Metadata name="Document.ЗаявкаКлиента.Attribute.Клиент" id="2b23171c-c146-45b1-82f1-218ecb2ce119"/>
 			<Metadata name="Document.ЗаявкаКлиента.Attribute.Исполнитель" id="8fec5085-e909-42f3-bcf0-7980ff22c109"/>
@@ -125,7 +125,7 @@
 		<Metadata name="Document.ЗаявкаКлиента.Form.ФормаДокумента.Form" id="9df7b571-bac8-446e-b610-de6193613619.0" configVersion="22999cad6b800347b963b69feee4832b00000000"/>
 		<Metadata name="Document.ЗаявкаКлиента.Form.ФормаСписка" id="deab80ba-0b55-4939-986e-01ed99bf5909" configVersion="1beafde27816aa4b88b2259ca548afc200000000"/>
 		<Metadata name="Document.ЗаявкаКлиента.Form.ФормаСписка.Form" id="deab80ba-0b55-4939-986e-01ed99bf5909.0" configVersion="e4c78c02b2d2394c897d4e5a3f5984a800000000"/>
-		<Metadata name="Document.ЗаявкаКлиента.ObjectModule" id="415066d3-76f4-435e-b898-d29c66db1265.0" configVersion="6bad7029942ac54dbba0ec83ea74d55700000000"/>
+		<Metadata name="Document.ЗаявкаКлиента.ObjectModule" id="415066d3-76f4-435e-b898-d29c66db1265.0" configVersion="b62ca809ce4cc54bb8c440d3bd3c819800000000"/>
 		<Metadata name="Document.ПоступлениеМатериалов" id="a934b56f-0dec-4766-ab02-7f2d8819ec9d" configVersion="1d7d38b491cb584780cc7ff85d6295d700000000">
 			<Metadata name="Document.ПоступлениеМатериалов.TabularSection.Материалы.Attribute.Сумма" id="082d33fc-be7c-4c55-a3c0-6f80e93d5e1c"/>
 			<Metadata name="Document.ПоступлениеМатериалов.Command.Печать" id="1f159e2f-8125-486f-bf94-ace0a9340903"/>
