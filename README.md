@@ -5,7 +5,7 @@
 [![Project](https://img.shields.io/badge/Тип-Учебный%20проект-green?style=for-the-badge)](https://github.com/TheYxel/Master_Service_1C)
 
 ## Видеопрезентация
-https://drive.google.com/file/d/1lPOuyzUl_s6b1OZVnkrxfS4wVBQuwxb0
+https://drive.google.com/file/d/1nl9rehmJg29OInnPaL5fpPXJ6cRNRNdL
 
 ## 📋 О проекте
 
